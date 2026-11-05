@@ -1,0 +1,67 @@
+name: daily-digest
+
+on:
+  schedule:
+    - cron: "30 9 * * 1-5"   # 18:30 JST, Mon-Fri
+    - cron: "0 23 * * 0"     # 08:00 JST Monday: weekly newsletter text
+  workflow_dispatch:
+    inputs:
+      date:
+        description: "Date to process (YYYY-MM-DD, JST). Empty = today"
+        required: false
+
+permissions:
+  contents: write
+
+concurrency:
+  group: digest
+  cancel-in-progress: false
+
+jobs:
+  run:
+    runs-on: ubuntu-latest
+    timeout-minutes: 30
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - name: Daily summaries
+        if: github.event.schedule != '0 23 * * 0'
+        working-directory: jp-filings-digest/jp-filings-digest
+        env:
+          EDINET_API_KEY: ${{ secrets.EDINET_API_KEY }}
+          ANTHROPIC_API_KEY: ${{ secrets.ANTHROPIC_API_KEY }}
+          MAX_DOCS: ${{ vars.MAX_DOCS || '150' }}
+          SITE_URL: ${{ vars.SITE_URL }}
+          SITE_TITLE: ${{ vars.SITE_TITLE || 'Japan Small-Cap Filings in English' }}
+          OPERATOR_NAME: ${{ vars.OPERATOR_NAME }}
+          CONTACT_EMAIL: ${{ vars.CONTACT_EMAIL }}
+          SUBSCRIBE_URL: ${{ vars.SUBSCRIBE_URL }}
+          INPUT_DATE: ${{ github.event.inputs.date }}
+        run: |
+          if [ -n "$INPUT_DATE" ]; then python -m digest.run --out ../../docs --date "$INPUT_DATE"; else python -m digest.run --out ../../docs; fi
+      - name: Weekly newsletter text
+        if: github.event.schedule == '0 23 * * 0'
+        working-directory: jp-filings-digest/jp-filings-digest
+        env:
+          SITE_URL: ${{ vars.SITE_URL }}
+          SITE_TITLE: ${{ vars.SITE_TITLE }}
+          SUBSCRIBE_URL: ${{ vars.SUBSCRIBE_URL }}
+          OPERATOR_NAME: ${{ vars.OPERATOR_NAME }}
+        run: python -m digest.run --weekly --out ../../docs --date "$(TZ=Asia/Tokyo date -d 'yesterday' +%F)"
+      - name: Keep flagged items for review (not published)
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: needs-review
+          path: needs_review/
+          if-no-files-found: ignore
+          retention-days: 30
+      - name: Publish
+        run: |
+          git config user.name "digest-bot"
+          git config user.email "digest-bot@users.noreply.github.com"
+          git add docs
+          git diff --cached --quiet || git commit -m "digest: $(TZ=Asia/Tokyo date +%F)"
+          git push
