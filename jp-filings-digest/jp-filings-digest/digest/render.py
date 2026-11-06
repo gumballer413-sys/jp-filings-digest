@@ -51,9 +51,9 @@ def item_html(it: dict) -> str:
         f'<div class="meta">Stated purpose: {esc(purpose)}</div>'
         if purpose and purpose != "Not stated" else ""
     )
-    noen = '<span class="tag noen">No English filing</span>' if it.get("no_english") else ""
+    noen = '<span class="tag noen">Japanese only on EDINET</span>' if it.get("no_english") else ""
     code = it.get("securities_code")
-    code_html = f" ({esc(code)})" if code and code != "Not stated" else ""
+    code_html = f" ({esc(code)})" if code and not str(code).startswith("Not") else ""
     return (
         f'<div class="item" id="{esc(it.get("doc_id", ""))}">'
         f'<span class="tag">{esc(it.get("type_label", ""))}</span>{noen}'
@@ -78,10 +78,26 @@ def page(title: str, body: str, s: Settings) -> str:
     )
 
 
+def _is_company_news(it: dict) -> bool:
+    """Hide fund reports saved before the fund filter existed (no 4-character securities code)."""
+    if it.get("doc_type") not in ("180", "220"):
+        return True
+    code = str(it.get("securities_code") or "")
+    return len(code) >= 4 and code[:4].isalnum() and not code.startswith("Not")
+
+
+def _code4(code) -> str:
+    code = str(code or "")
+    return code[:4] if len(code) == 5 and code.endswith("0") else code
+
+
 def load_days(data_dir: Path) -> dict[str, list[dict]]:
     days = {}
     for f in sorted(data_dir.glob("*.json")):
-        days[f.stem] = json.loads(f.read_text(encoding="utf-8"))
+        items = [it for it in json.loads(f.read_text(encoding="utf-8")) if _is_company_news(it)]
+        for it in items:
+            it["securities_code"] = _code4(it.get("securities_code"))
+        days[f.stem] = items
     return days
 
 
@@ -103,7 +119,7 @@ def render_site(out_dir: Path, s: Settings, recent: int = 30) -> None:
     )
     intro = (
         f"<h1>{esc(s.site_title)}</h1><p class='sub'>Tender offers, 5% stake reports, extraordinary reports and buybacks "
-        "filed by Japanese companies, summarized in English every business day. Companies that publish no English filing are marked.</p>"
+        "filed by Japanese companies, summarized in English every business day. Filings with no English version on EDINET are marked.</p>"
     )
     (out_dir / "index.html").write_text(page(s.site_title, intro + links, s), encoding="utf-8")
     write_feed(out_dir, days, s)
@@ -155,8 +171,8 @@ def weekly_markdown(out_dir: Path, s: Settings, end: date, days_back: int = 7, t
     ]
     for it in picked[:top]:
         code = it.get("securities_code")
-        code_txt = f" ({code})" if code and code != "Not stated" else ""
-        tag = " [no English filing]" if it.get("no_english") else ""
+        code_txt = f" ({code})" if code and not str(code).startswith("Not") else ""
+        tag = " [Japanese only on EDINET]" if it.get("no_english") else ""
         lines.append(f"**{it.get('company')}{code_txt}**{tag}: {it.get('headline')}")
         for f in it.get("key_facts", [])[:3]:
             lines.append(f"- {f}")

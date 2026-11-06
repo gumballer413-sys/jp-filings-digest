@@ -67,6 +67,10 @@ def select_documents(docs: list[dict], max_docs: int) -> list[dict]:
             continue
         if str(d.get("disclosureStatus") or "0") not in ("0", ""):
             continue
+        if str(d.get("ordinanceCode") or "") == "030":
+            continue  # investment trusts and other funds (特定有価証券開示府令), not company news
+        if code in ("180", "220") and not d.get("secCode"):
+            continue  # extraordinary reports / buybacks only from listed companies
         picked.append(d)
 
     def key(d):

@@ -16,7 +16,8 @@ Rules you must follow:
 - Use only facts written in the filing text you are given. Never add outside knowledge, context or guesses.
 - No opinions, predictions, ratings or advice. Never say whether to buy, sell or hold, and never call anything cheap, attractive, risky, an opportunity, positive or negative.
 - Keep numbers, percentages, dates and share counts exactly as written. Convert Japanese dates to YYYY-MM-DD.
-- Write company and person names in their official English name if the filing gives one, otherwise in romaji.
+- A holding ratio written as a decimal (for example 0.0551) is a share of 1: write it as a percentage with two decimals (5.51%).
+- Write company and person names in English only: the official English name if the filing gives one, otherwise romaji. No Japanese characters anywhere.
 - If a field is not in the text, write "Not stated".
 
 Reply with JSON only, in this shape:
@@ -92,6 +93,17 @@ def build_user_text(meta: dict, body_text: str) -> str:
     )
 
 
+def _code(model_code, meta_code) -> str:
+    """EDINET gives 5-character codes such as '54490'; readers know the 4-character form '5449'."""
+    for c in (meta_code, model_code):
+        c = str(c or "").strip()
+        if re.fullmatch(r"[0-9A-Z]{4}0", c):
+            return c[:4]
+        if re.fullmatch(r"[0-9A-Z]{4}", c):
+            return c
+    return "Not stated"
+
+
 def _clean(result: dict, meta: dict) -> dict:
     """Force the model's reply into the expected types so rendering can never crash."""
     def s(v, default="Not stated"):
@@ -101,7 +113,7 @@ def _clean(result: dict, meta: dict) -> dict:
         facts = [facts]
     return {
         "company": s(result.get("company"), s(meta.get("filerName"))),
-        "securities_code": s(result.get("securities_code"))[:5],
+        "securities_code": _code(result.get("securities_code"), meta.get("secCode")),
         "filer": s(result.get("filer"), s(meta.get("filerName"))),
         "event": s(result.get("event"), "other"),
         "headline": s(result.get("headline"), "Filing submitted to EDINET"),
