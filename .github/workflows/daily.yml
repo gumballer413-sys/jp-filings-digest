@@ -2,7 +2,8 @@ name: daily-digest
 
 on:
   schedule:
-    - cron: "30 9 * * 1-5"   # 18:30 JST, Mon-Fri
+    - cron: "47 9 * * 1-5"   # 18:47 JST, Mon-Fri
+    - cron: "17 12 * * 1-5"  # 21:17 JST, Mon-Fri (backup)
     - cron: "0 23 * * 0"     # 08:00 JST Monday: weekly newsletter text
   workflow_dispatch:
     inputs:
