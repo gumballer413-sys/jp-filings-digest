@@ -2092,6 +2092,29 @@
   "needs_review": false
  },
  {
+  "doc_id": "S100ZCXV",
+  "doc_type": "350",
+  "type_label": "Large shareholding report (5% rule)",
+  "priority": 3,
+  "no_english": true,
+  "submitted": "2026-11-12 16:00",
+  "source_url": "https://disclosure2dl.edinet-fsa.go.jp/searchdocument/pdf/S100ZCXV.pdf",
+  "company": "ERTH Group Co., Ltd.",
+  "securities_code": "6072",
+  "filer": "Kaihou Co., Ltd.",
+  "event": "large_shareholding",
+  "headline": "Kaihou reports 30.21% stake in ERTH Group after 2026-11-06 share lending contract change.",
+  "key_facts": [
+   "Total holding of 6,992,800 shares equals 30.21% of issued shares (23,148,000)",
+   "Kaihou Co., Ltd. holds 2,192,800 shares (9.47%) after deducting 4,800,000 shares subject to delivery rights",
+   "Kaihou Singapore Pte. Ltd. holds 4,800,000 shares (20.74%)",
+   "Reporting obligation date is 2026-11-06; reason is change in material contracts relating to share certificates",
+   "Filing states Kaihou Co., Ltd. may propose large dilutive fundraising and director appointments to increase corporate value"
+  ],
+  "stated_purpose": "Specified investment shares held for purposes other than pure investment, with a policy of friendly long-term holding with the issuer.",
+  "needs_review": false
+ },
+ {
   "doc_id": "S100ZD8Y",
   "doc_type": "350",
   "type_label": "Large shareholding report (5% rule)",
