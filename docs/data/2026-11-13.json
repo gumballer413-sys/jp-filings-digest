@@ -1814,6 +1814,29 @@
   "needs_review": false
  },
  {
+  "doc_id": "S100ZDOM",
+  "doc_type": "350",
+  "type_label": "Large shareholding report (5% rule)",
+  "priority": 3,
+  "no_english": true,
+  "submitted": "2026-11-13 15:35",
+  "source_url": "https://disclosure2dl.edinet-fsa.go.jp/searchdocument/pdf/S100ZDOM.pdf",
+  "company": "Ebara Jitsugyo Co., Ltd.",
+  "securities_code": "6328",
+  "filer": "NIPPON ACTIVE VALUE FUND PLC",
+  "event": "large_shareholding",
+  "headline": "NIPPON ACTIVE VALUE FUND PLC reports 15.29% holding in Ebara Jitsugyo after 1% increase.",
+  "key_facts": [
+   "Joint filers total 3; combined holding 3,953,800 shares, 15.29%, up from 14.13% in the previous report.",
+   "NIPPON ACTIVE VALUE FUND PLC holds 1,847,900 shares (7.15%), unchanged from the previous report.",
+   "NAVF Select (Master) Fund LP holds 1,500,000 shares (5.80%), up from 4.64%.",
+   "Dalton Investments, Inc. holds 605,900 shares (2.34%), unchanged from the previous report.",
+   "Shares in issue are 25,860,000; reporting obligation date 2026-11-06; submitted 2026-11-13."
+  ],
+  "stated_purpose": "Investment and management advice to the issuer's management, and important proposal actions as circumstances warrant. The fund believes the issuer's financial soundness and market position are not reflected in its share price, and may request dialogue with management on ways to enhance share value for all shareholders. On 2026-01-22 it made a three-item shareholder proposal for the issuer's March 2026 annual general meeting: revision of the compensation amount under a restricted share compensation plan, a share buyback, and an articles amendment on the number of outside directors. In December 2025 it sent letters to all investees, including the issuer, on capital cost and share price awareness, restricted share compensation and shareholding guidelines, board independence, and review of all strategic options including going private and spin-offs, and published the letter on its website. It intends to continue dialogue in line with the letter and may make further proposals depending on the dialogue.",
+  "needs_review": false
+ },
+ {
   "doc_id": "S100ZEZ3",
   "doc_type": "350",
   "type_label": "Large shareholding report (5% rule)",
@@ -2110,6 +2133,29 @@
    "Reason for report: change in collateral agreements; obligation date 2026-11-09, submitted 2026-11-13"
   ],
   "stated_purpose": "As representative director and president of the issuer, the filer holds the shares as a stable shareholder for the purpose of participating in management. JPM,Inc., the asset management company of the issuer's president, holds its shares as a stable shareholder.",
+  "needs_review": false
+ },
+ {
+  "doc_id": "S100ZGLM",
+  "doc_type": "350",
+  "type_label": "Large shareholding report (5% rule)",
+  "priority": 3,
+  "no_english": true,
+  "submitted": "2026-11-13 16:13",
+  "source_url": "https://disclosure2dl.edinet-fsa.go.jp/searchdocument/pdf/S100ZGLM.pdf",
+  "company": "Ferotec Corporation",
+  "securities_code": "6890",
+  "filer": "Oasis Management Company Ltd.",
+  "event": "large_shareholding",
+  "headline": "Oasis Management Company Ltd. reports 6.63% stake in Ferrotec as of 2026-11-06.",
+  "key_facts": [
+   "Holding of 3,584,800 shares, a 6.63% ratio, up from 6.57% in the previous report",
+   "Shares issued: 54,070,536",
+   "Report obligation date 2026-11-06; filed 2026-11-13 as change report No.3",
+   "Total acquisition funds 11,393,354,000 yen, stated as fund assets",
+   "Within the last 60 days: 28,400 shares (ratio 0.05) bought on market and 1,800 shares (ratio 0.00) bought off-market at 7,596 yen on 2026-10-23"
+  ],
+  "stated_purpose": "Portfolio investment, with constructive dialogue, advice and proposals to the issuer to improve medium- to long-term corporate and shareholder value. Proposals concern certain important proposal acts, including disposal and acquisition of material assets, transfer of business, dividend policy changes, listing on an exchange, and capital policy changes. Further proposals are planned within 12 months, along with continued engagement on matters including the issuer's share incentive plan. The filer plans to increase its holding by more than 5 percentage points within 3 months of 2026-11-06 through market and off-market transactions, subject to market price levels and other conditions, and may require regulatory notification or approval.",
   "needs_review": false
  },
  {
