@@ -986,6 +986,29 @@
   "needs_review": false
  },
  {
+  "doc_id": "S100ZIOX",
+  "doc_type": "360",
+  "type_label": "Change report (5% rule)",
+  "priority": 3,
+  "no_english": true,
+  "submitted": "2026-11-19 10:25",
+  "source_url": "https://disclosure2dl.edinet-fsa.go.jp/searchdocument/pdf/S100ZIOX.pdf",
+  "company": "HYUGA PRIMARY CARE",
+  "securities_code": "2413",
+  "filer": "M3, Inc.",
+  "event": "large_shareholding",
+  "headline": "M3, Inc. amended change report on HYUGA PRIMARY CARE holdings, citing pledge agreement dated 2026-11-12.",
+  "key_facts": [
+   "Total holding of joint holders: 7,297,560 shares, 96.36%, unchanged from the previous report; issued shares 7,327,600",
+   "M3, Inc. holds 699,600 shares (9.24%), unchanged from the previous report",
+   "Report obligation date 2026-11-12; submitted 2026-11-17 as a correction to the earlier filing",
+   "Pledge agreement dated 2026-11-12 with Fukuoka Bank and Mizuho Bank covers 565,820 shares held by M3, Inc.",
+   "Non-tender agreement dated 2026-09-25: 133,780 shares of M3, Inc. and 191,569 shares of M3 Career, Inc. to be tendered in the self-tender offer"
+  ],
+  "stated_purpose": "Policy shareholding based on capital and business alliance. Related agreements concern the tender offer by M3 Career-side holder CUC Inc. (dated 2026-09-25), the non-tender agreement, the shareholder agreement, and the pledge agreement dated 2026-11-12.",
+  "needs_review": false
+ },
+ {
   "doc_id": "S100ZIK7",
   "doc_type": "350",
   "type_label": "Large shareholding report (5% rule)",
