@@ -2185,6 +2185,29 @@
   "needs_review": false
  },
  {
+  "doc_id": "S100ZKA6",
+  "doc_type": "350",
+  "type_label": "Large shareholding report (5% rule)",
+  "priority": 3,
+  "no_english": true,
+  "submitted": "2026-11-26 15:58",
+  "source_url": "https://disclosure2dl.edinet-fsa.go.jp/searchdocument/pdf/S100ZKA6.pdf",
+  "company": "Visual Processing Japan Co., Ltd (romaji: Kabushiki Kaisha Bijuaru Purosesshingu Japan)",
+  "securities_code": "334A",
+  "filer": "Cierto Communication Co.,Ltd (joint filer with Hiroaki Mimura)",
+  "event": "large_shareholding",
+  "headline": "Cierto Communication's holding ratio in Visual Processing Japan falls to 38.50%.",
+  "key_facts": [
+   "Two joint holders: Cierto Communication Co.,Ltd 1,280,000 shares (38.50%) and Hiroaki Mimura 510,000 shares (15.34%)",
+   "Combined holding 1,790,000 shares, 53.84% of 3,324,600 issued shares, down from 55.59%",
+   "Cierto Communication's prior-report ratio was 0.3867 (38.67%)",
+   "Mimura disposed 50,000 shares off-market on 2026-11-19 (ratio 1.50%)",
+   "Cierto Communication's borrowings total 269,440,000 yen from Mitsubishi UFJ Bank; Mimura's own funds 7,000,000 yen"
+  ],
+  "stated_purpose": "Cierto Communication Co.,Ltd: asset management company of the issuer's representative director, held as a stable shareholder. Hiroaki Mimura: representative director of the issuer, held as a stable shareholder.",
+  "needs_review": false
+ },
+ {
   "doc_id": "S100ZHLS",
   "doc_type": "350",
   "type_label": "Large shareholding report (5% rule)",
