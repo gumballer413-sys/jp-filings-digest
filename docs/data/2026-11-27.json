@@ -1541,6 +1541,29 @@
   "needs_review": false
  },
  {
+  "doc_id": "S100ZKHX",
+  "doc_type": "360",
+  "type_label": "Change report (5% rule)",
+  "priority": 3,
+  "no_english": true,
+  "submitted": "2026-11-27 11:21",
+  "source_url": "https://disclosure2dl.edinet-fsa.go.jp/searchdocument/pdf/S100ZKHX.pdf",
+  "company": "Kabushiki Kaisha Tein",
+  "securities_code": "7217",
+  "filer": "Hakaru Ichino",
+  "event": "large_shareholding",
+  "headline": "Hakaru Ichino's holding in Tein fell to 0.00%; joint holder ICHINO HOLDINGS, INC. holds 47.29%.",
+  "key_facts": [
+   "Hakaru Ichino holds 0 shares (0.00%), down from 4.08% in the previous report.",
+   "ICHINO HOLDINGS, INC. holds 4,640,100 shares (47.29%), unchanged from the previous report.",
+   "Issued shares total 9,811,308; the group's previous combined ratio was 51.37%.",
+   "Market disposals by the filer: 976,100 shares (9.95%) on 2026-11-16 and 400,000 shares (4.08%) on 2026-11-25.",
+   "Correction (訂正報告書) of prior report S100ZKAQ; reporting obligation arose 2026-11-25, filed 2026-11-26."
+  ],
+  "stated_purpose": "As founder and representative director of the issuer, holds shares as a stable shareholder for the purpose of participating in management.",
+  "needs_review": false
+ },
+ {
   "doc_id": "S100ZIE3",
   "doc_type": "350",
   "type_label": "Large shareholding report (5% rule)",
@@ -1906,6 +1929,29 @@
    "Report submitted 2026-11-27 as Change Report No. 8 under Article 27-25, paragraph 1."
   ],
   "stated_purpose": "Pure investment",
+  "needs_review": false
+ },
+ {
+  "doc_id": "S100ZJT4",
+  "doc_type": "350",
+  "type_label": "Large shareholding report (5% rule)",
+  "priority": 3,
+  "no_english": true,
+  "submitted": "2026-11-27 15:33",
+  "source_url": "https://disclosure2dl.edinet-fsa.go.jp/searchdocument/pdf/S100ZJT4.pdf",
+  "company": "Puremia Gurupu Kabushiki Kaisha",
+  "securities_code": "7199",
+  "filer": "Dalton Investments, Inc.",
+  "event": "large_shareholding",
+  "headline": "Dalton Investments reports 6.74% stake in Puremia Gurupu, up from 5.05%.",
+  "key_facts": [
+   "Holding of 2,749,600 shares, 6.74% of 40,765,864 issued shares",
+   "Holding ratio in the previous report: 5.05%",
+   "Reason for report: holding ratio increased by 1% or more",
+   "Report obligation date 2026-11-19; filed 2026-11-27",
+   "Total acquisition funds 5,750,335,000 yen, described as client funds"
+  ],
+  "stated_purpose": "The filer states it acquires the issuer's shares and holds them long-term, based on its view that the issuer's share price is below its true value. It may buy more shares or related instruments, sell all or part of its holding, and take other measures depending on conditions. It also states it intends to hold constructive dialogue with the issuer on governance, board composition, management, business, finances and strategy, and to propose that the issuer examine all strategic options, including going private and spin-offs.",
   "needs_review": false
  },
  {
